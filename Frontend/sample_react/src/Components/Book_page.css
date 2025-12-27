@@ -1,0 +1,293 @@
+/* ===============================
+   Book_page.css - Fixed Version
+   =============================== */
+
+/* Global Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-bottom: 50px;
+    overflow-x: hidden;
+}
+
+/* Title Styling */
+h2 {
+    text-align: center;
+    color: #fff;
+    font-size: 2.2rem;
+    font-weight: 400;
+    margin: 40px 20px 30px;
+    line-height: 1.4;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+    font-style: italic;
+    max-width: 800px;
+    animation: fadeIn 1s ease-out;
+    /* margin-left: 200px; */
+}
+
+/* Options Button Container */
+.opt_btn {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin: 20px auto 40px;
+    padding: 0 20px;
+    max-width: 600px;
+    width: 100%;
+}
+
+/* Button rows */
+.btn_one, .btn_two {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    width: 100%;
+}
+
+/* Buttons */
+.opt_btn button {
+    position: relative;
+    width: 100%;
+    padding: 16px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    color: white;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    min-height: 60px;
+}
+
+/* Animated Shine Effect */
+.opt_btn button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.opt_btn button:hover::before {
+    left: 100%;
+}
+
+/* Hover Lift Effect */
+.opt_btn button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.opt_btn button:active {
+    transform: translateY(-1px);
+}
+
+/* Button Gradient Variations - Applied to all buttons in order */
+.btn_one button:nth-child(1) {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.btn_one button:nth-child(2) {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.btn_two button:nth-child(1) {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.btn_two button:nth-child(2) {
+    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+}
+
+/* Hover Color Shifts */
+.btn_one button:nth-child(1):hover {
+    background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+}
+
+.btn_one button:nth-child(2):hover {
+    background: linear-gradient(135deg, #e887f7 0%, #e4475c 100%);
+}
+
+.btn_two button:nth-child(1):hover {
+    background: linear-gradient(135deg, #3a9bfe 0%, #00d9e3 100%);
+}
+
+.btn_two button:nth-child(2):hover {
+    background: linear-gradient(135deg, #3bd672 0%, #32e0c9 100%);
+}
+
+/* Content Area */
+.opt_content {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    min-height: 400px;
+}
+
+/* Style for all content components */
+.opt_content > div {
+    background: #fff;
+    border-radius: 20px;
+    padding: 30px;
+    margin: 20px 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    animation: slideIn 0.5s ease-out;
+    min-height: 300px;
+}
+
+/* Logout Button Container */
+.logout_btn {
+    display: flex;
+    justify-content: center;
+    margin: 40px auto;
+    width: 100%;
+}
+
+.logout_btn button {
+    padding: 14px 50px;
+    font-size: 16px;
+    font-weight: 600;
+    border: 2px solid white;
+    border-radius: 50px;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    min-width: 160px;
+}
+
+.logout_btn button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+    transition: left 0.5s ease;
+}
+
+.logout_btn button:hover::before {
+    left: 100%;
+}
+
+.logout_btn button:hover {
+    background: white;
+    color: #667eea;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255,255,255,0.3);
+}
+
+/* Accessibility Focus */
+button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255,255,255,0.5);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* ===============================
+   Responsive Design
+   =============================== */
+
+@media (max-width: 1024px) {
+    .opt_btn {
+        max-width: 600px;
+    }
+}
+
+@media (max-width: 768px) {
+    h2 {
+        font-size: 1.8rem;
+        margin: 30px 15px 20px;
+    }
+    
+    .opt_btn {
+        gap: 15px;
+        max-width: 400px;
+    }
+    
+    .btn_one, .btn_two {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .opt_btn button {
+        padding: 14px 18px;
+        font-size: 15px;
+        min-height: 55px;
+    }
+    
+    .logout_btn {
+        margin: 30px auto;
+    }
+    
+    .logout_btn button {
+        padding: 12px 40px;
+    }
+    
+    .opt_content > div {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 1.5rem;
+        margin: 25px 10px 15px;
+    }
+    
+    .opt_btn {
+        gap: 12px;
+        padding: 0 10px;
+    }
+    
+    .opt_btn button {
+        font-size: 14px;
+        padding: 12px 15px;
+        border-radius: 10px;
+    }
+    
+    .opt_content {
+        padding: 0 10px;
+    }
+    
+    .opt_content > div {
+        padding: 15px;
+        border-radius: 15px;
+    }
+}
+

@@ -1,0 +1,222 @@
+/* Borrow.css */
+
+.book-list-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.book-list-container h2 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: 600;
+  border-bottom: 3px solid #3498db;
+  padding-bottom: 0.5rem;
+  margin-left: 20px;
+}
+
+.book-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.book-table thead {
+  background: linear-gradient(135deg, #3498db, #2980b9);
+}
+
+.book-table th {
+  padding: 16px 12px;
+  text-align: left;
+  color: white;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: none;
+}
+
+.book-table th:first-child {
+  border-top-left-radius: 12px;
+}
+
+.book-table th:last-child {
+  border-top-right-radius: 12px;
+}
+
+.book-table tbody tr {
+  transition: all 0.3s ease;
+  border-bottom: 1px solid #ecf0f1;
+}
+
+.book-table tbody tr:hover {
+  background-color: #f8f9fa;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.book-table tbody tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.book-table tbody tr:nth-child(even):hover {
+  background-color: #e8f4f8;
+}
+
+.book-table td {
+  padding: 14px 12px;
+  color: #2c3e50;
+  font-size: 0.9rem;
+  border: none;
+}
+
+.book-table td:first-child {
+  font-weight: 600;
+  color: #3498db;
+  text-align: center;
+}
+
+.book-table td:nth-child(2) {
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.book-table td:nth-child(3) {
+  font-family: 'Courier New', monospace;
+  color: #7f8c8d;
+}
+
+.book-table td:nth-child(4) {
+  color: #27ae60;
+  font-weight: 500;
+}
+
+.book-table td:nth-child(5) {
+  color: #8e44ad;
+  font-style: italic;
+}
+
+.book-table td:nth-child(6),
+.book-table td:nth-child(7) {
+  font-family: 'Courier New', monospace;
+  color: #e67e22;
+  text-align: center;
+}
+
+.book-table td:nth-child(8) {
+  font-weight: 600;
+  text-align: center;
+  color: #e74c3c;
+}
+
+.book-list-container p {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #7f8c8d;
+  padding: 3rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  margin: 2rem 0;
+}
+
+.fine-overdue {
+  background-color: #ffeaa7 !important;
+  border-left: 4px solid #fdcb6e;
+}
+
+.fine-high {
+  background-color: #fab1a0 !important;
+  border-left: 4px solid #e17055;
+}
+
+@media (max-width: 1024px) {
+  .book-list-container {
+    margin: 1rem;
+    padding: 0 0.5rem;
+  }
+  
+  .book-table {
+    font-size: 0.85rem;
+  }
+  
+  .book-table th,
+  .book-table td {
+    padding: 12px 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .book-list-container {
+    overflow-x: auto;
+  }
+  
+  .book-table {
+    min-width: 800px;
+  }
+  
+  .book-list-container h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .book-list-container {
+    margin: 0.5rem;
+  }
+  
+  .book-table {
+    min-width: 900px;
+  }
+  
+  .book-table th,
+  .book-table td {
+    padding: 10px 6px;
+    font-size: 0.8rem;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.book-table tbody tr {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.book-table tbody tr:nth-child(1) { animation-delay: 0.1s; }
+.book-table tbody tr:nth-child(2) { animation-delay: 0.2s; }
+.book-table tbody tr:nth-child(3) { animation-delay: 0.3s; }
+.book-table tbody tr:nth-child(4) { animation-delay: 0.4s; }
+.book-table tbody tr:nth-child(5) { animation-delay: 0.5s; }
+
+@media print {
+  .book-list-container {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .book-table {
+    box-shadow: none;
+    border: 1px solid #bdc3c7;
+  }
+  
+  .book-table th {
+    background: #ecf0f1 !important;
+    color: #2c3e50 !important;
+    border-bottom: 2px solid #bdc3c7;
+  }
+}
