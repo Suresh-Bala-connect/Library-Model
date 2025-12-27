@@ -23,7 +23,7 @@ function Add_Catagory() {
 
     const createCatagory = async () => {
         try {
-            const bookResult = await axios.post('http://localhost:5019/catagoryCreate', catagoryItem);
+            const bookResult = await axios.post('https://library-model-backend.onrender.com/catagoryCreate', catagoryItem);
             console.log("Book Created")
             if (bookResult.data.success) {
                 alert("Catageory Created")

@@ -10,7 +10,7 @@ function Book_borrow() {
     
     const getAllBook = async () => {
         try {
-            const result = await axios.get("http://localhost:5019/getAllbooks");
+            const result = await axios.get("https://library-model-backend.onrender.com/getAllbooks");
             if (result.data.success) {
                 setBooks(result.data.data);
             }
@@ -46,7 +46,7 @@ function Book_borrow() {
 
     const borrowCreate = async () => {
         try {
-            const createResult = await axios.post('http://localhost:5019/borrowCreate', borrowItem);
+            const createResult = await axios.post('https://library-model-backend.onrender.com/borrowCreate', borrowItem);
             if (createResult.data.success) {
                 alert("List Updated")
             }

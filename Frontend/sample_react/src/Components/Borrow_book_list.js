@@ -12,7 +12,7 @@ function Borrow_Book_list() {
 
     const getAllBorrowBooks = async () => {
         try {
-            const result = await axios.get("http://localhost:5019/getAllborrow");
+            const result = await axios.get("https://library-model-backend.onrender.com/getAllborrow");
             if (result.data.success) {
                 console.log(result.data.data);
 
@@ -36,7 +36,7 @@ function Borrow_Book_list() {
         if(!conformDelete)
             return
         try{            
-            const result=await axios.put(`http://localhost:5019/deleteBorrow/${id}`,{book: borrow.book})
+            const result=await axios.put(`https://library-model-backend.onrender.com/deleteBorrow/${id}`,{book: borrow.book})
             console.log(result.data)
             if(result.data.success){
                 alert("Done Delete Request")

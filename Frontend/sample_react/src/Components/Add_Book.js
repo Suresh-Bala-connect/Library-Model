@@ -28,7 +28,7 @@ function Add_Book() {
 
     const getAllcatagory = async () => {
         try {
-            const result = await axios.get("http://localhost:5019/allCatagory")
+            const result = await axios.get("https://library-model-backend.onrender.com/allCatagory")
             if (result.data.success) {
                 setCatagorylist(result.data.data)
             }
@@ -59,7 +59,7 @@ function Add_Book() {
 
     const createBook = async () => {
         try {
-            const bookResult = await axios.post('http://localhost:5019/bookCreate', bookItems);
+            const bookResult = await axios.post('https://library-model-backend.onrender.com/bookCreate', bookItems);
 
             if (bookResult.data.success) {
                 alert("Book Created")
@@ -85,7 +85,7 @@ function Add_Book() {
 
     const updateBook = async () =>  {
         try {
-            const result = await axios.put(`http://localhost:5019/UpdateBookdata/${editMode._id}`,
+            const result = await axios.put(`https://library-model-backend.onrender.com/UpdateBookdata/${editMode._id}`,
                 bookItems
             )
             if (result.data.success) {

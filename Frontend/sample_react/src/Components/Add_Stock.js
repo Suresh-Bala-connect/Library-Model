@@ -10,7 +10,7 @@ function Add_Stock() {
 
     const getAllbooklist = async () => {
         try {
-            const bookResult = await axios.get("http://localhost:5019/getBook");
+            const bookResult = await axios.get("https://library-model-backend.onrender.com/getBook");
             if (bookResult.data.success) {
                 setAllbooks(bookResult.data.data)
             }
@@ -38,7 +38,7 @@ function Add_Stock() {
 
     const updateStock = async () => {
         try {
-            const result = await axios.post('http://localhost:5019/updateStock', stockItem);
+            const result = await axios.post('https://library-model-backend.onrender.com/updateStock', stockItem);
             console.log(result)
             if (result.data.success) {
                 alert("Stock Created")

@@ -11,7 +11,7 @@ function Book_List() {
 
   const getAllBooks = async () => {
     try {
-      const result = await axios.get("http://localhost:5019/getAllbooks");
+      const result = await axios.get("https://library-model-backend.onrender.com/getAllbooks");
       if (result.data.success) {
         console.log(result.data.data);
 
@@ -31,7 +31,7 @@ function Book_List() {
       return; 
     }
     try {
-      const result = await axios.delete(`http://localhost:5019/deleteBook/${id}`)
+      const result = await axios.delete(`https://library-model-backend.onrender.com/deleteBook/${id}`)
       // console.log("84884",id)
       console.log("---",result);
       
